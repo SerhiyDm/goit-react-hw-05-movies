@@ -28,7 +28,7 @@ export const InputStyled = styled.input.attrs({
 
 export const SubmitButton = styled.button.attrs(p => ({
   type: 'submit',
-  disabled: p.dis,
+  disabled: p.dis === '' ? true : false,
 }))`
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.15) inset;
   border: none;

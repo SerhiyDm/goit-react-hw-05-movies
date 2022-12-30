@@ -1,10 +1,9 @@
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { NotifyError } from 'components/Notify/Notify';
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { fetchMovie } from 'services/rest_api';
 import { Toaster } from 'react-hot-toast';
-import { Loader } from 'components/Loader/Loader';
 import { BackLink } from 'components/BackLink/BackLink';
 import { Outlet } from 'react-router-dom';
 
@@ -31,10 +30,8 @@ const MovieDetails = () => {
     <main>
       <Toaster />
       <BackLink to={backRef}>Go Back</BackLink>
-      <Suspense fallback={<Loader />}>
-        {data && <MovieInfo data={data} />}
-        <Outlet />
-      </Suspense>
+      {data && <MovieInfo data={data} />}
+      <Outlet />
     </main>
   );
 };

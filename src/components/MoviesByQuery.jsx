@@ -27,7 +27,7 @@ const MoviesByQuery = () => {
     }
   }, [searchParam]);
 
-  return <>{renderData && <MoviesList data={renderData} path="" />}</>;
+  return <>{renderData && <MoviesList data={renderData} />}</>;
 };
 
 export default MoviesByQuery;

@@ -26,7 +26,7 @@ const Cast = () => {
   return (
     <>
       <Toaster />
-      {data && (
+      {data && data.length !== 0 ? (
         <ul>
           {data.map(({ character, name, profile_path, credit_id }) => (
             <li key={credit_id}>
@@ -40,6 +40,8 @@ const Cast = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>We don`t have any casts for this movie</p>
       )}
     </>
   );
